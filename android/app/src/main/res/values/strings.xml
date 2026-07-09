@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Easystud</string>
+    <string name="title_activity_main">Easystud</string>
+    <string name="package_name">com.easystud.app</string>
+    <string name="custom_url_scheme">com.easystud.app</string>
+</resources>

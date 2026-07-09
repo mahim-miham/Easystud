@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* ============================================================
+   EASYSTUD DESIGN TOKENS
+   Concept: "The Greenboard Notebook" -- the deep green chalkboard
+   at the front of a classroom, paired with the ruled paper of a
+   student's own notebook. Chalk-yellow is the pop of a highlighter
+   or the yellow chalk stick reached for to mark what matters.
+   60% Chalk (paper surfaces) : 30% Board (green depth) : 10% Sprout/Chalk-yellow (accent)
+   ============================================================ */
+
+:root {
+  /* --- 60%: paper / chalk surfaces --- */
+  --chalk: #F7F5EE;
+  --chalk-dim: #EFEBE0;
+  --paper-line: #DCD5C2;
+  --surface: #FFFFFF;
+
+  /* --- 30%: board green depth --- */
+  --board: #16342B;
+  --board-deep: #0D251E;
+  --board-soft: #234A3C;
+
+  /* --- 10%: signature accents --- */
+  --sprout: #2FBE77;
+  --sprout-deep: #1F9C60;
+  --chalk-yellow: #F2C14E;
+  --coral: #EF7B5E;
+
+  /* --- ink / text --- */
+  --ink: #16211C;
+  --ink-soft: #5C6B62;
+  --ink-on-board: #EAF3EE;
+  --ink-on-board-soft: #9FB8AB;
+
+  /* --- type --- */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* --- depth (the "dynamic / 3D" language) --- */
+  --shadow-card: 0 1px 2px rgba(13, 37, 30, 0.06), 0 8px 20px -6px rgba(13, 37, 30, 0.18);
+  --shadow-card-hover: 0 2px 4px rgba(13, 37, 30, 0.08), 0 16px 32px -8px rgba(13, 37, 30, 0.28);
+  --shadow-board: 0 20px 50px -12px rgba(13, 37, 30, 0.45);
+
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  /* text sitting on tinted accent backgrounds (badges, error banners) */
+  --warn-text: #8a6410;
+  --danger-text: #8a3524;
+
+  color-scheme: light;
+}
+
+/* Dark mode: the greenboard becomes the whole room, not just the header.
+   Paper turns to a deep charcoal-green; cards lift slightly off it;
+   text inverts to chalk. Same identity, different time of day. */
+[data-theme='dark'] {
+  --chalk: #0E1E18;
+  --chalk-dim: #14281F;
+  --paper-line: #23372D;
+  --surface: #17322A;
+
+  --board: #0A1712;
+  --board-deep: #060F0B;
+  --board-soft: #1C3A2F;
+
+  --sprout: #3ECF8E;
+  --sprout-deep: #2FBE77;
+  --chalk-yellow: #F2C14E;
+  --coral: #FF9478;
+
+  --ink: #EAF3EE;
+  --ink-soft: #8FA79B;
+  --ink-on-board: #EAF3EE;
+  --ink-on-board-soft: #9FB8AB;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 20px -6px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.3), 0 16px 32px -8px rgba(0, 0, 0, 0.5);
+  --shadow-board: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+
+  --warn-text: #F5D98A;
+  --danger-text: #FFC4B0;
+
+  color-scheme: dark;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background: var(--chalk);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overscroll-behavior-y: none;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+/* Ruled-notebook texture, used sparingly on paper surfaces */
+.notebook-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 27px,
+    var(--paper-line) 28px
+  );
+  background-position: 0 6px;
+}
+
+/* Chalk-dust texture for board surfaces */
+.chalk-surface {
+  background-color: var(--board);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.035) 0, transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(255,255,255,0.03) 0, transparent 50%);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Hide scrollbars on the mobile shell but keep it scrollable */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
