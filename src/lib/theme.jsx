@@ -19,7 +19,7 @@ function getInitialTheme() {
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme)
   const meta = document.querySelector('meta[name="theme-color"]')
-  if (meta) meta.setAttribute('content', theme === 'dark' ? '#0A1712' : '#16342B')
+  if (meta) meta.setAttribute('content', theme === 'dark' ? '#0A0A18' : '#14142B')
 }
 
 /**

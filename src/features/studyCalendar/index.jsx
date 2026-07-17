@@ -89,7 +89,7 @@ export default function StudyCalendar() {
     <div className="flex flex-1 flex-col">
       <div className="flex items-center justify-between px-5 pt-1 pb-3">
         <div>
-          <h1 className="font-display text-xl text-[var(--ink)]">Study Calendar</h1>
+          <h1 className="font-display font-semibold text-xl text-[var(--ink)]">Study Calendar</h1>
           <p className="text-[12px] text-[var(--ink-soft)]">Classes, exams and deadlines</p>
         </div>
         <button
@@ -182,7 +182,7 @@ export default function StudyCalendar() {
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
                 placeholder="e.g. SCB1003 Midterm"
-                className="w-full rounded-[var(--radius-sm)] border border-black/10 bg-[var(--surface)] px-3.5 py-2.5 text-[14px] outline-none focus:border-[var(--sprout)]"
+                className="w-full rounded-[var(--radius-sm)] border border-[var(--paper-line)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] outline-none focus:border-[var(--sprout)]"
               />
             </label>
 
@@ -212,7 +212,7 @@ export default function StudyCalendar() {
                   type="date"
                   value={form.date}
                   onChange={(e) => setForm({ ...form, date: e.target.value })}
-                  className="w-full rounded-[var(--radius-sm)] border border-black/10 bg-[var(--surface)] px-3 py-2.5 text-[14px] outline-none focus:border-[var(--sprout)]"
+                  className="w-full rounded-[var(--radius-sm)] border border-[var(--paper-line)] bg-[var(--surface)] px-3 py-2.5 text-[14px] outline-none focus:border-[var(--sprout)]"
                 />
               </label>
               <label className="flex-1">
@@ -221,7 +221,7 @@ export default function StudyCalendar() {
                   type="time"
                   value={form.time}
                   onChange={(e) => setForm({ ...form, time: e.target.value })}
-                  className="w-full rounded-[var(--radius-sm)] border border-black/10 bg-[var(--surface)] px-3 py-2.5 text-[14px] outline-none focus:border-[var(--sprout)]"
+                  className="w-full rounded-[var(--radius-sm)] border border-[var(--paper-line)] bg-[var(--surface)] px-3 py-2.5 text-[14px] outline-none focus:border-[var(--sprout)]"
                 />
               </label>
             </div>

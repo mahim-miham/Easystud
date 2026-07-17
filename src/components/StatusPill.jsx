@@ -2,7 +2,7 @@ const VARIANTS = {
   sprout: 'bg-[var(--sprout)]/15 text-[var(--sprout-deep)]',
   yellow: 'bg-[var(--chalk-yellow)]/25 text-[var(--warn-text)]',
   board: 'bg-[var(--board)]/8 text-[var(--board)]',
-  muted: 'bg-black/5 text-[var(--ink-soft)]',
+  muted: 'bg-[var(--veil-1)] text-[var(--ink-soft)]',
 }
 
 export default function StatusPill({ children, variant = 'muted', icon: Icon }) {

@@ -16,7 +16,7 @@ export default function FeatureDetail() {
       <div className="flex items-center gap-3 px-5 pt-[max(env(safe-area-inset-top),20px)] pb-2">
         <button
           onClick={() => navigate(-1)}
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-black/5 active:bg-black/10"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--veil-1)] active:bg-[var(--veil-2)]"
           aria-label="Back"
         >
           <ArrowLeft size={16} className="text-[var(--ink)]" />

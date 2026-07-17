@@ -24,7 +24,7 @@ export default function Profile() {
 
   return (
     <div className="flex flex-1 flex-col px-5 pt-[max(env(safe-area-inset-top),20px)] pb-6">
-      <h1 className="mb-4 font-display text-xl text-[var(--ink)]">Profile</h1>
+      <h1 className="mb-4 font-display font-semibold text-xl text-[var(--ink)]">Profile</h1>
 
       <button
         onClick={handleAccountRowTap}
@@ -50,7 +50,7 @@ export default function Profile() {
 
       <Link
         to="/upgrade"
-        className="mb-5 flex items-center justify-between rounded-[var(--radius-md)] p-4 text-white"
+        className="holo-border mb-5 flex items-center justify-between rounded-[var(--radius-md)] p-4 text-white"
         style={{ background: 'var(--board)', boxShadow: 'var(--shadow-card)' }}
       >
         <div className="flex items-center gap-2.5">
@@ -71,7 +71,7 @@ export default function Profile() {
           <HardDrive size={15} />
           <span className="text-[13px] font-medium">Storage</span>
         </div>
-        <div className="mb-1.5 h-2 w-full overflow-hidden rounded-full bg-black/5">
+        <div className="mb-1.5 h-2 w-full overflow-hidden rounded-full bg-[var(--veil-1)]">
           <div
             className="h-full rounded-full"
             style={{ width: `${pct}%`, background: 'var(--sprout)' }}
@@ -82,8 +82,8 @@ export default function Profile() {
         </p>
       </div>
 
-      <div className="mb-5 divide-y divide-black/5 rounded-[var(--radius-md)] bg-[var(--surface)]" style={{ boxShadow: 'var(--shadow-card)' }}>
-        <button onClick={toggleTheme} className="flex w-full items-center justify-between px-4 py-3.5 active:bg-black/[0.02]">
+      <div className="mb-5 divide-y divide-[var(--veil-1)] rounded-[var(--radius-md)] bg-[var(--surface)]" style={{ boxShadow: 'var(--shadow-card)' }}>
+        <button onClick={toggleTheme} className="flex w-full items-center justify-between px-4 py-3.5 active:bg-[var(--veil-1)]">
           <div className="flex items-center gap-3">
             {theme === 'dark' ? <Moon size={16} className="text-[var(--ink-soft)]" /> : <Sun size={16} className="text-[var(--ink-soft)]" />}
             <span className="text-[13.5px] text-[var(--ink)]">Appearance</span>
@@ -92,7 +92,7 @@ export default function Profile() {
             {theme === 'dark' ? 'Dark' : 'Light'}
           </span>
         </button>
-        <Link to="/notifications" className="flex w-full items-center justify-between px-4 py-3.5 active:bg-black/[0.02]">
+        <Link to="/notifications" className="flex w-full items-center justify-between px-4 py-3.5 active:bg-[var(--veil-1)]">
           <div className="flex items-center gap-3">
             <Bell size={16} className="text-[var(--ink-soft)]" />
             <span className="text-[13.5px] text-[var(--ink)]">Notifications</span>
@@ -118,7 +118,7 @@ export default function Profile() {
 
 function SettingsRow({ icon: Icon, label }) {
   return (
-    <button className="flex w-full items-center justify-between px-4 py-3.5 active:bg-black/[0.02]">
+    <button className="flex w-full items-center justify-between px-4 py-3.5 active:bg-[var(--veil-1)]">
       <div className="flex items-center gap-3">
         <Icon size={16} className="text-[var(--ink-soft)]" />
         <span className="text-[13.5px] text-[var(--ink)]">{label}</span>

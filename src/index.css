@@ -2,46 +2,51 @@
 
 /* ============================================================
    EASYSTUD DESIGN TOKENS
-   Concept: "The Greenboard Notebook" -- the deep green chalkboard
-   at the front of a classroom, paired with the ruled paper of a
-   student's own notebook. Chalk-yellow is the pop of a highlighter
-   or the yellow chalk stick reached for to mark what matters.
-   60% Chalk (paper surfaces) : 30% Board (green depth) : 10% Sprout/Chalk-yellow (accent)
+   Concept: "Neural Foil" -- a holographic AI ID-card aesthetic.
+   The app lives in a deep space-void. Every card is a foil trading
+   card: flat and quiet until a student tilts it, at which point an
+   iridescent violet -> cyan -> lime -> magenta sheen sweeps across
+   the glass, like a Pokemon holo catching light. That tilt-reveal
+   IS the "authentic AI" cue -- a system that responds to you, not
+   a static illustration of one.
    ============================================================ */
 
 :root {
-  /* --- 60%: paper / chalk surfaces --- */
-  --chalk: #F7F5EE;
-  --chalk-dim: #EFEBE0;
-  --paper-line: #DCD5C2;
+  /* --- surfaces: the void and the glass floating in it --- */
+  --chalk: #EEF0FA;
+  --chalk-dim: #E2E4F4;
+  --paper-line: #CBCEE8;
   --surface: #FFFFFF;
 
-  /* --- 30%: board green depth --- */
-  --board: #16342B;
-  --board-deep: #0D251E;
-  --board-soft: #234A3C;
+  /* --- depth layer (header / cockpit panels) --- */
+  --board: #14142B;
+  --board-deep: #0A0A1A;
+  --board-soft: #1F1F3D;
 
-  /* --- 10%: signature accents --- */
-  --sprout: #2FBE77;
-  --sprout-deep: #1F9C60;
+  /* --- holo accents: the four hues of the foil sweep --- */
+  --sprout: #7C5CFF;
+  --sprout-deep: #6142E0;
+  --holo-cyan: #22D3EE;
+  --holo-lime: #A3E635;
+  --holo-magenta: #F472B6;
   --chalk-yellow: #F2C14E;
   --coral: #EF7B5E;
 
   /* --- ink / text --- */
-  --ink: #16211C;
-  --ink-soft: #5C6B62;
-  --ink-on-board: #EAF3EE;
-  --ink-on-board-soft: #9FB8AB;
+  --ink: #14142B;
+  --ink-soft: #5B5B7A;
+  --ink-on-board: #F2F1FF;
+  --ink-on-board-soft: #A6A5CC;
 
   /* --- type --- */
-  --font-display: 'Fraunces', serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   /* --- depth (the "dynamic / 3D" language) --- */
-  --shadow-card: 0 1px 2px rgba(13, 37, 30, 0.06), 0 8px 20px -6px rgba(13, 37, 30, 0.18);
-  --shadow-card-hover: 0 2px 4px rgba(13, 37, 30, 0.08), 0 16px 32px -8px rgba(13, 37, 30, 0.28);
-  --shadow-board: 0 20px 50px -12px rgba(13, 37, 30, 0.45);
+  --shadow-card: 0 1px 2px rgba(20, 20, 43, 0.06), 0 8px 20px -6px rgba(20, 20, 43, 0.14);
+  --shadow-card-hover: 0 2px 4px rgba(20, 20, 43, 0.08), 0 20px 40px -10px rgba(124, 92, 255, 0.35);
+  --shadow-board: 0 20px 50px -12px rgba(10, 10, 26, 0.45);
 
   --radius-lg: 22px;
   --radius-md: 16px;
@@ -51,38 +56,48 @@
   --warn-text: #8a6410;
   --danger-text: #8a3524;
 
+  /* subtle fill/divider veils -- theme-aware replacement for bg-black/N */
+  --veil-1: rgba(20, 20, 43, 0.045);
+  --veil-2: rgba(20, 20, 43, 0.09);
+
   color-scheme: light;
 }
 
-/* Dark mode: the greenboard becomes the whole room, not just the header.
-   Paper turns to a deep charcoal-green; cards lift slightly off it;
-   text inverts to chalk. Same identity, different time of day. */
+/* Dark mode: the void takes over the whole screen, not just the header.
+   Glass cards float a shade brighter than the background; the holo
+   sweep reads strongest here -- this is the app's native habitat. */
 [data-theme='dark'] {
-  --chalk: #0E1E18;
-  --chalk-dim: #14281F;
-  --paper-line: #23372D;
-  --surface: #17322A;
+  --chalk: #0A0A18;
+  --chalk-dim: #101024;
+  --paper-line: #212140;
+  --surface: #14142C;
 
-  --board: #0A1712;
-  --board-deep: #060F0B;
-  --board-soft: #1C3A2F;
+  --board: #0A0A18;
+  --board-deep: #050510;
+  --board-soft: #17172E;
 
-  --sprout: #3ECF8E;
-  --sprout-deep: #2FBE77;
+  --sprout: #9D85FF;
+  --sprout-deep: #7C5CFF;
+  --holo-cyan: #4DE8FF;
+  --holo-lime: #C2FF6B;
+  --holo-magenta: #FF8AC4;
   --chalk-yellow: #F2C14E;
   --coral: #FF9478;
 
-  --ink: #EAF3EE;
-  --ink-soft: #8FA79B;
-  --ink-on-board: #EAF3EE;
-  --ink-on-board-soft: #9FB8AB;
+  --ink: #F2F1FF;
+  --ink-soft: #9291B8;
+  --ink-on-board: #F2F1FF;
+  --ink-on-board-soft: #A6A5CC;
 
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 20px -6px rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.3), 0 16px 32px -8px rgba(0, 0, 0, 0.5);
-  --shadow-board: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 20px -6px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.4), 0 24px 48px -10px rgba(157, 133, 255, 0.4);
+  --shadow-board: 0 20px 50px -12px rgba(0, 0, 0, 0.7);
 
   --warn-text: #F5D98A;
   --danger-text: #FFC4B0;
+
+  --veil-1: rgba(255, 255, 255, 0.055);
+  --veil-2: rgba(255, 255, 255, 0.11);
 
   color-scheme: dark;
 }
@@ -103,23 +118,65 @@ html, body {
   min-height: 100dvh;
 }
 
-/* Ruled-notebook texture, used sparingly on paper surfaces */
+/* Faint circuit-grid texture, used sparingly on paper/void surfaces */
 .notebook-lines {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 27px,
-    var(--paper-line) 28px
-  );
-  background-position: 0 6px;
+  background-image:
+    linear-gradient(var(--paper-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: 0 6px, 6px 0;
+  opacity: 1;
 }
 
-/* Chalk-dust texture for board surfaces */
+/* Cockpit / void surface: deep space with a slow-drifting neural mesh */
 .chalk-surface {
   background-color: var(--board);
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.035) 0, transparent 45%),
-    radial-gradient(circle at 80% 60%, rgba(255,255,255,0.03) 0, transparent 50%);
+    radial-gradient(circle at 15% 15%, rgba(124, 92, 255, 0.16) 0, transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(34, 211, 238, 0.12) 0, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(244, 114, 182, 0.08) 0, transparent 55%);
+}
+
+/* Holo sweep: the iridescent gradient used on tilt cards and accents */
+.holo-sweep {
+  background: linear-gradient(
+    115deg,
+    var(--sprout) 0%,
+    var(--holo-cyan) 30%,
+    var(--holo-lime) 55%,
+    var(--holo-magenta) 80%,
+    var(--sprout) 100%
+  );
+}
+
+.holo-text {
+  background: linear-gradient(100deg, var(--sprout), var(--holo-cyan) 45%, var(--holo-magenta) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* perspective root for 3D tilt cards */
+.tilt-scene {
+  perspective: 900px;
+}
+
+/* Static 1px holo edge for surfaces that don't tilt (banners, pills) */
+.holo-border {
+  position: relative;
+}
+.holo-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, var(--sprout), var(--holo-cyan), var(--holo-magenta));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .font-display {

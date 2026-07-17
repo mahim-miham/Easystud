@@ -56,7 +56,7 @@ export default function Research() {
 
   return (
     <div className="flex flex-1 flex-col px-5 pt-1 pb-6">
-      <h1 className="font-display text-xl text-[var(--ink)]">Research</h1>
+      <h1 className="font-display font-semibold text-xl text-[var(--ink)]">Research</h1>
       <p className="mb-4 text-[12px] text-[var(--ink-soft)]">
         Ask any topic — get a deep, structured explanation.
       </p>

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, Check } from 'lucide-react'
+import HoloTiltCard from '../components/HoloTiltCard'
 
 // NOTE: prices below are placeholders — swap in your real numbers
 // once you've decided on them. Everything else on this screen is wired up.
@@ -36,21 +37,23 @@ export default function Upgrade() {
       <div className="mb-4 flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-black/5"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--veil-1)]"
           aria-label="Back"
         >
           <ArrowLeft size={16} className="text-[var(--ink)]" />
         </button>
-        <h1 className="font-display text-xl text-[var(--ink)]">Choose your plan</h1>
+        <h1 className="font-display font-semibold text-xl holo-text">Choose your plan</h1>
       </div>
 
       <div className="space-y-3">
-        {PLANS.map((plan) => (
-          <div
+        {PLANS.map((plan) => {
+          const Wrapper = plan.highlight ? HoloTiltCard : 'div'
+          return (
+          <Wrapper
             key={plan.id}
             className="relative rounded-[var(--radius-md)] p-4"
             style={{
-              background: plan.highlight ? 'var(--board)' : 'white',
+              background: plan.highlight ? 'var(--board)' : 'var(--surface)',
               boxShadow: plan.highlight ? 'var(--shadow-board)' : 'var(--shadow-card)',
             }}
           >
@@ -88,16 +91,17 @@ export default function Upgrade() {
               ))}
             </ul>
             <button
-              className="mt-4 w-full rounded-[var(--radius-sm)] py-2.5 text-[13px] font-semibold active:scale-[0.98] transition"
+              className={`mt-4 w-full rounded-[var(--radius-sm)] py-2.5 text-[13px] font-semibold active:scale-[0.98] transition ${plan.highlight ? 'holo-sweep' : ''}`}
               style={{
-                background: plan.highlight ? 'var(--sprout)' : 'var(--chalk-dim)',
-                color: plan.highlight ? 'white' : 'var(--ink)',
+                background: plan.highlight ? undefined : 'var(--chalk-dim)',
+                color: plan.highlight ? 'var(--board-deep)' : 'var(--ink)',
               }}
             >
               {plan.id === 'free' ? 'Current plan' : `Get ${plan.name}`}
             </button>
-          </div>
-        ))}
+          </Wrapper>
+          )
+        })}
       </div>
 
       <p className="mt-5 text-center text-[11px] leading-relaxed text-[var(--ink-soft)]">

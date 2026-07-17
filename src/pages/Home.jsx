@@ -35,11 +35,11 @@ export default function Home() {
         <p className="font-mono text-[11px] uppercase tracking-wide text-[var(--ink-on-board-soft)]">
           {firstName ? `Welcome back, ${firstName}` : 'Welcome'}
         </p>
-        <h1 className="font-display text-[22px] text-[var(--ink-on-board)]">Ready to study?</h1>
+        <h1 className="font-display font-semibold text-[22px] holo-text">Ready to study?</h1>
 
         <Link
           to="/upgrade"
-          className="mt-4 flex items-center justify-between rounded-[var(--radius-sm)] bg-white/8 px-4 py-3 active:bg-white/12 transition"
+          className="holo-border mt-4 flex items-center justify-between rounded-[var(--radius-sm)] bg-white/8 px-4 py-3 active:bg-white/12 transition"
         >
           <div className="flex items-center gap-2.5">
             <Crown size={16} className="text-[var(--chalk-yellow)]" />

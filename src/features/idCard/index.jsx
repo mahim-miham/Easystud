@@ -85,10 +85,10 @@ export default function IdCardBuilder() {
 
   return (
     <div className="flex flex-1 flex-col px-5 pt-1 pb-6">
-      <h1 className="font-display text-xl text-[var(--ink)]">Student ID / CV</h1>
+      <h1 className="font-display font-semibold text-xl text-[var(--ink)]">Student ID / CV</h1>
       <p className="mb-4 text-[12px] text-[var(--ink-soft)]">Build a clean ID card or CV in minutes.</p>
 
-      <div className="mb-4 flex gap-2 rounded-full bg-black/5 p-1">
+      <div className="mb-4 flex gap-2 rounded-full bg-[var(--veil-1)] p-1">
         {['id', 'cv'].map((t) => (
           <button
             key={t}
@@ -202,7 +202,7 @@ function Field({ label, value, onChange, full, placeholder }) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-[var(--radius-sm)] border border-black/10 bg-[var(--surface)] px-3 py-2.5 text-[13.5px] outline-none focus:border-[var(--sprout)]"
+        className="w-full rounded-[var(--radius-sm)] border border-[var(--paper-line)] bg-[var(--surface)] px-3 py-2.5 text-[13.5px] outline-none focus:border-[var(--sprout)]"
       />
     </label>
   )
@@ -217,7 +217,7 @@ function TextArea({ label, value, onChange, placeholder }) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full resize-none rounded-[var(--radius-sm)] border border-black/10 bg-[var(--surface)] px-3 py-2.5 text-[13.5px] outline-none focus:border-[var(--sprout)]"
+        className="w-full resize-none rounded-[var(--radius-sm)] border border-[var(--paper-line)] bg-[var(--surface)] px-3 py-2.5 text-[13.5px] outline-none focus:border-[var(--sprout)]"
       />
     </label>
   )

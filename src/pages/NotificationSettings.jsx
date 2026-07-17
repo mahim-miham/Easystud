@@ -18,12 +18,12 @@ export default function NotificationSettings() {
       <div className="mb-5 flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-black/5"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--veil-1)]"
           aria-label="Back"
         >
           <ArrowLeft size={16} className="text-[var(--ink)]" />
         </button>
-        <h1 className="font-display text-xl text-[var(--ink)]">Notifications</h1>
+        <h1 className="font-display font-semibold text-xl text-[var(--ink)]">Notifications</h1>
       </div>
 
       <div className="mb-4 rounded-[var(--radius-md)] bg-[var(--surface)] p-4" style={{ boxShadow: 'var(--shadow-card)' }}>
@@ -50,7 +50,7 @@ export default function NotificationSettings() {
             value={prefs.notifyEmail}
             onChange={(e) => update({ notifyEmail: e.target.value })}
             placeholder="you@example.com"
-            className="mt-3 w-full rounded-[var(--radius-sm)] border border-black/10 bg-[var(--chalk)] px-3.5 py-2.5 text-[13.5px] text-[var(--ink)] outline-none focus:border-[var(--sprout)]"
+            className="mt-3 w-full rounded-[var(--radius-sm)] border border-[var(--paper-line)] bg-[var(--chalk)] px-3.5 py-2.5 text-[13.5px] text-[var(--ink)] outline-none focus:border-[var(--sprout)]"
           />
         )}
       </div>
@@ -80,7 +80,7 @@ function Row({ icon: Icon, title, subtitle, checked, onChange }) {
       <button
         onClick={() => onChange(!checked)}
         className="relative h-6 w-11 shrink-0 rounded-full transition"
-        style={{ background: checked ? 'var(--sprout)' : 'rgba(0,0,0,0.15)' }}
+        style={{ background: checked ? 'var(--sprout)' : 'var(--veil-2)' }}
         aria-pressed={checked}
         aria-label={`Toggle ${title}`}
       >

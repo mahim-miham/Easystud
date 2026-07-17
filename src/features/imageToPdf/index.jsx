@@ -65,7 +65,7 @@ export default function ImageToPdf() {
 
   return (
     <div className="flex flex-1 flex-col px-5 pt-1 pb-6">
-      <h1 className="font-display text-xl text-[var(--ink)]">Image to PDF</h1>
+      <h1 className="font-display font-semibold text-xl text-[var(--ink)]">Image to PDF</h1>
       <p className="mb-4 text-[12px] text-[var(--ink-soft)]">
         Snap photos of handwritten notes and merge them into one PDF.
       </p>

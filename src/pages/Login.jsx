@@ -45,7 +45,7 @@ export default function Login() {
     <div className="flex flex-1 flex-col px-6 pb-8 pt-[max(env(safe-area-inset-top),20px)]">
       <button
         onClick={() => navigate(-1)}
-        className="mb-6 flex h-8 w-8 items-center justify-center rounded-full bg-black/5"
+        className="mb-6 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--veil-1)]"
         aria-label="Back"
       >
         <ArrowLeft size={16} className="text-[var(--ink)]" />
@@ -53,7 +53,7 @@ export default function Login() {
 
       <div className="mb-8 flex flex-col items-center text-center">
         <Logo size={40} color="var(--sprout-deep)" />
-        <h1 className="mt-3 font-display text-[22px] text-[var(--ink)]">
+        <h1 className="mt-3 font-display font-semibold text-[22px] holo-text">
           {mode === 'signup' ? 'Create your account' : 'Welcome back'}
         </h1>
         <p className="mt-1 text-[12.5px] text-[var(--ink-soft)]">
@@ -61,7 +61,7 @@ export default function Login() {
         </p>
       </div>
 
-      <div className="mb-5 flex gap-2 rounded-full bg-black/5 p-1">
+      <div className="mb-5 flex gap-2 rounded-full bg-[var(--veil-1)] p-1">
         <button
           onClick={() => setMethod('email')}
           className="flex flex-1 items-center justify-center gap-1.5 rounded-full py-2 text-[13px] font-medium transition"
@@ -109,8 +109,8 @@ export default function Login() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-[var(--radius-sm)] py-3.5 text-[14px] font-semibold text-white transition active:scale-[0.98] disabled:opacity-60"
-          style={{ background: 'var(--board)' }}
+          className="holo-sweep w-full rounded-[var(--radius-sm)] py-3.5 text-[14px] font-semibold text-white transition active:scale-[0.98] disabled:opacity-60"
+          style={{ color: 'var(--board-deep)' }}
         >
           {loading ? 'Please wait…' : mode === 'signup' ? 'Create account' : 'Log in'}
         </button>
@@ -142,7 +142,7 @@ function Field({ label, value, onChange, placeholder, type = 'text' }) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-[var(--radius-sm)] border border-black/10 bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--ink)] outline-none focus:border-[var(--sprout)]"
+        className="w-full rounded-[var(--radius-sm)] border border-[var(--paper-line)] bg-[var(--surface)] px-3.5 py-2.5 text-[14px] text-[var(--ink)] outline-none focus:border-[var(--sprout)]"
       />
     </label>
   )

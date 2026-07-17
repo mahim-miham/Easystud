@@ -9,7 +9,7 @@ export default function ProgressTracking() {
 
   return (
     <div className="flex flex-1 flex-col px-5 pt-1 pb-6">
-      <h1 className="font-display text-xl text-[var(--ink)]">Progress</h1>
+      <h1 className="font-display font-semibold text-xl text-[var(--ink)]">Progress</h1>
       <p className="mb-4 text-[12px] text-[var(--ink-soft)]">
         Your study activity, tracked right on this device.
       </p>
